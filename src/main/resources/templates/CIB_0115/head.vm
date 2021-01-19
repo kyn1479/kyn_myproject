@@ -1,0 +1,6 @@
+##交易流水查询--生成上传文件
+#set($map =
+{
+    "Content-Type":"application/json;charset=UTF-8"
+})
+$map

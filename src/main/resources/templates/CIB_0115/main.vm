@@ -1,0 +1,6 @@
+#set($main_template_key=$data.main_template_key)
+$JSON.toJSONString($main_template_key)
+$VelocityUtil.evaluate($context , $header)
+$StringUtils.isBlank(100)
+$VelocityUtil.evaluate($context , $sub1)
+$VelocityUtil.evaluate($context , $sub2)

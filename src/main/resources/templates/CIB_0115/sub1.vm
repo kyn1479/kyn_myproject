@@ -1,0 +1,2 @@
+#set($sub1_template_key = $data.sub1_template_key)
+$JSON.toJSONString($sub1_template_key)
