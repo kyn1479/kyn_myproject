@@ -1,6 +1,8 @@
 package com.kyn.myproject.demo.common.entity;
 
 
+import com.kyn.myproject.demo.common.enums.EncodeEnum;
+import com.kyn.myproject.demo.common.enums.MessageFormatEnum;
 import com.kyn.myproject.demo.common.enums.ProcessPhaseEnum;
 import com.kyn.myproject.demo.common.util.StringUtils;
 
@@ -49,7 +51,10 @@ public class MessageDescription {
      */
     private ProcessPhaseEnum processPhase;
 
-
+    /**
+     * 当前处理的通讯
+     */
+    private CommunicationEntity communicationEntity;
 
     public MessageEnvelope getClientRequestMessageEnvelope() {
         return clientRequestMessageEnvelope;
@@ -105,6 +110,14 @@ public class MessageDescription {
 
     public void setProcessPhase(ProcessPhaseEnum processPhase) {
         this.processPhase = processPhase;
+    }
+
+    public CommunicationEntity getCommunicationEntity() {
+        return communicationEntity;
+    }
+
+    public void setCommunicationEntity(CommunicationEntity communicationEntity) {
+        this.communicationEntity = communicationEntity;
     }
 
     /**

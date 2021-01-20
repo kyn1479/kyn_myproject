@@ -62,9 +62,14 @@ public class GroovyScriptCache implements CacheManager {
         logger.info("-----GroovyScriptCache结束加载报文解析脚本 size={},cost-Time={}", parserMap.size(), System.currentTimeMillis() - startTime);
     }
 
+    /**
+     * 获取报文解析脚本
+     * @param key
+     * @return
+     */
     @Override
-    public Object get(String key) {
-        return null;
+    public MessageParser get(String key) {
+        return parserMap.get(key);
     }
 
     @Override

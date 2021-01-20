@@ -10,8 +10,7 @@ import com.kyn.myproject.demo.common.util.StringUtils;
  * @Description: 消息解析器实现类
  * @date 2021/1/19 18:15
  */
-public class PayCoreParser implements MessageParser {
-
+public class CoreParser implements MessageParser {
     @Override
     public Object parse(ProjectContext context, Object message) {
         Map<String, Object> map = JSON.parseObject(StringUtils.valueOf(message), new TypeReference<HashMap<String, Object>>() {});
@@ -22,7 +21,6 @@ public class PayCoreParser implements MessageParser {
             def propertyMap = JSON.parseObject(StringUtils.valueOf(extend1))
             map.get("body").putAll(propertyMap)
         }
-
         return map;
     }
 }

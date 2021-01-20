@@ -1,6 +1,8 @@
 package com.kyn.myproject.demo.common.util;
 
 import com.kyn.myproject.demo.common.entity.MessageTemplate;
+import com.kyn.myproject.demo.common.enums.SystemErrorCode;
+import com.kyn.myproject.demo.common.exception.ProjectException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.ResourceUtils;
@@ -60,8 +62,8 @@ public class FileUtils {
                                     messageTemplate.setSubTemplate2(sbf.substring(0, sbf.length() - 1));
                                     break;
                                 default:
-//                                    LoggerUtil.warn(logger, "processPhase = {} 没有加 switch.", processPhase);
-                                    throw new Exception("模板定义错误");
+                                    logger.warn("fileName = {} 没有加 switch.", fileName);
+                                    throw new ProjectException(SystemErrorCode.SYSTEM_ERROR);
                             }
                         }
                     } catch (Exception e) {
