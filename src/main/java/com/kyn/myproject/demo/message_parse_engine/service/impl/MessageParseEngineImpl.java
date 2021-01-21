@@ -51,7 +51,7 @@ public class MessageParseEngineImpl implements MessageParseEngine {
         Object message = null;
         ProcessPhaseEnum processPhase = messageDescription.getProcessPhase();
         switch (processPhase) {
-            case CLIENT_REQUEST_RECEIVE://客户端请求(调用方请求请求)
+            case CLIENT_REQUEST_RECEIVE://客户端请求
                 message = messageDescription.getClientRequestMessageEnvelope().getContent();
                 break;
             case SERVER_RESPONSE_RECEIVE://服务端响应

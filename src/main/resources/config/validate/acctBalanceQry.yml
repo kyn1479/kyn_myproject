@@ -1,0 +1,23 @@
+#网关余额查询
+acctBalanceQry:
+  - field: channelCode
+    fieldName: 渠道系统ID
+    option: true
+    style: channelCodeStyle
+
+  - field: channelTransNo
+    fieldName: 渠道系统流水号
+    option: true
+    style: channelTransNoStyle
+
+  - field: channelDateTime
+    fieldName: 渠道交易时间
+    option: true
+    style: channelDateTimeStyle
+
+  - field: acctNo
+    fieldName: 查询的银行账号
+    option: true
+    style: acctNoStyle
+
+

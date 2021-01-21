@@ -1,0 +1,11 @@
+#单笔代扣
+acctTransDetailQry:
+  - field: acctNo
+    fieldName: 账号
+    option: false
+    style: acctNoStyle
+
+  - field: deptCode
+    fieldName: 开户机构编码
+    option: false
+    style: deptCodeStyle

@@ -1,5 +1,12 @@
 package com.kyn.myproject.demo.common.util;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -9,7 +16,7 @@ import java.util.Map;
  * @date 2021/1/18 16:02
  */
 public class MapUtils {
-
+    private static Logger logger = LoggerFactory.getLogger(MapUtils.class);
     /**
      * @Description 根据固定规则将默认配置的文本格式转换成map格式
      * @Params 待转换内容(map的toString格式)
@@ -40,6 +47,37 @@ public class MapUtils {
                     kvMap.put(orgKey, kv.substring(index + 1).trim());
                 }
             }
+        }
+        return kvMap;
+    }
+
+    /**
+     * 过滤map中的空值的entry和指定key的entry
+     * @param map
+     * @param filtKeys
+     * @return
+     */
+    public static Map<String, Object> paraFilter(Map<String, Object> map, String... filtKeys) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        if (map == null || map.size() <= 0) {
+            return result;
+        }
+        for (String key : map.keySet()) {
+            Object value = map.get(key);
+            if (StringUtils.isNotBlank(value) && !Arrays.asList(filtKeys).contains(key)) {
+                result.put(key, value);
+            }
+        }
+        return result;
+    }
+
+    public static Map<String, String> covertToJSON(String text) {
+        Map<String, String> kvMap = new HashMap<>();
+        try {
+            kvMap = JSON.parseObject(text, new TypeReference<Map<String, String>>() {
+            });
+        } catch (Exception e) {
+            logger.info("covertToJSON解析异常，异常信息：{}", e);
         }
         return kvMap;
     }

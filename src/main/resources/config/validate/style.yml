@@ -1,0 +1,133 @@
+#此文件中定义字段校验style，在交易参数配置中引用相应的style进行校验
+style:
+  acctNoStyle:
+      length: 1,32
+      regex: ^[\w\-\.]{1,32}|(\w)+(\.\w+)*@(\w)+((\.\w+)+)$
+  acctNameStyle:
+      length: 1,64
+      regex: ^[\w\-\.\u00b7\u2022\uff08\uff09\u0028\u0029\u201C\u201D\u4E00-\u9FA5]{1,64}$
+  deptCodeStyle:
+      length: 1,16
+      regex: ^[\w\-]{1,16}$
+  certTypeStyle:
+      length: 2,2
+      regex: ^\d{2,2}$
+  certNoStyle:
+      length: 1,32
+      regex: ^\w{1,32}$
+  dcFlagStyle:
+      length: 1,1
+      regex: ^D|C$
+  phoneNoStyle:
+      length: 11,11
+      regex: ^\d{11,11}$
+  validdateStyle:
+      length: 4,4
+      regex: ^\d{4,4}$
+  cvv2Style:
+      length: 3,3
+      regex: ^\w{3,3}$
+  productCodeStyle:
+      length: 1,32
+      regex: ^[\w\-]{1,32}$
+  remarkStyle:
+      length: 1,32
+  transNoStyle:
+      length: 1,32
+      regex: ^[\w\-]{1,32}$
+  channelTransNoStyle:
+      length: 1,64
+      regex: ^[\w\-]{1,64}$
+  dateTimeStyle:
+      length: 14,14
+      regex: ^\d{14,14}$
+      type: date
+  smsVerifyCodeStyle:
+      length: 4,8
+      regex: ^[a-zA-z0-9]{4,8}$
+  urlStyle:
+      length: 1,512
+  responseTypeStyle:
+      length: 1,16
+      regex: ^[\w\-]{1,16}$
+  transAmountStyle:
+      type: amount
+  goodsNameStyle:
+      length: 1,32
+      regex: ^[\w\-\.\u00b7\u4E00-\u9FA5]{1,32}$
+  goodsNameEnableSpaceStyle:
+      length: 1,32
+      regex: ^[\w\-\.\u00b7\u4E00-\u9FA5]{1,32}$|^[\w\-\.\u00b7\u4E00-\u9FA5][\w\-\.\u00b7\u4E00-\u9FA5\u0020]{0,30}[\w\-\.\u00b7\u4E00-\u9FA5]$
+  mediaTypeStyle:
+      length: 1,1
+      regex: ^0|1$
+  areaCodeStyle:
+      length: 1,32
+      regex: ^\d{1,32}$
+  areaNameStyle:
+      length: 1,32
+      regex: ^[\w\-\.\u00b7\u4E00-\u9FA5]{1,32}$
+  purposeStyle:
+      length: 1,32
+  epFlagStyle:
+      length: 1,1
+      regex: ^P|E$
+  eFlagStyle:
+        length: 1,1
+        regex: ^E$
+  totalCountStyle:
+      length: 1,20
+      regex: ^\d{1,20}$
+  transCodeStyle:
+      length: 1,32
+      regex: ^[\w\-\.]{1,32}$
+  channelCodeStyle:
+      length: 1,20
+      regex: ^[\w\-\.]{1,32}$
+  contractNoStyle:
+      length: 1,64
+      regex: ^[\w\-\.]{1,64}$
+  idStyle:
+      length: 1,20
+      regex: ^\d{1,20}$
+  codeStyle:
+      length: 1,32
+      regex: ^[\w\-\.]{1,32}$
+  resCodeStyle:
+      length: 1,64
+      regex: ^[\w\-\.]{1,64}$
+  nameStyle:
+      length: 1,64
+      regex: ^[\w\-\.\u00b7\u4E00-\u9FA5]{1,64}$
+  typeStyle:
+      length: 2,2
+      regex: ^[\w]{2,2}$
+  statusStyle:
+      length: 1,16
+      regex: ^[\w\-]{1,16}$
+  pageStyle:
+      length: 1,20
+      regex: ^\d{1,20}$
+  timeStyle:
+      length: 6,6
+      regex: ^\d{6,6}$
+  pwdStyle:
+      length: 1,128
+      regex: ^[\w\-\.]{1,128}$
+  descStyle:
+      length: 1,256
+  merchantPropStyle:
+      length: 1,1024
+  dateStyle:
+      length: 8,8
+      regex: ^\d{8,8}$
+      type: date
+  channelDateTimeStyle:
+        length: 1,32
+  sceneCodeStyle:
+        length: 1,20
+  systemIdStyle:
+        length: 1,32
+  pageNoStyle:
+      length: 1,9999
+      regex: ^\d{1,9999}$

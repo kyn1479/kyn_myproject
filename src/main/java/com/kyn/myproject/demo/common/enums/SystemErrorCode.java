@@ -16,6 +16,12 @@ public enum SystemErrorCode implements ErrorCode {
     BIZ_PARAM_NULL("G101", "业务参数为空异常"),
     SYSTEM_ERROR("G102", "系统内部异常"),
     SEQUENCE_GEN_ERR("G103", "流水号生成异常"),
+    TYPE_VALIDATE_ERROR("G104", "TYPE参数校验异常{}"),
+    OPTION_VALIDATE_ERROR("G105", "参数可选校验异常{}"),
+    LENGTH_VALIDATE_ERROR("G106", "参数错误：{0}长度不正确"),
+    REGEX_VALIDATE_ERROR("G107", "参数正则匹配校验异常{}"),
+    COMMUNICATION_EXCEPTION("G108", "通讯异常"),
+
 
     ;
     /**
@@ -44,7 +50,7 @@ public enum SystemErrorCode implements ErrorCode {
 
     @Override
     public ExceptionTypeEnum getExceptionType() {
-        return null;
+        return ExceptionTypeEnum.SYSTEM_ERROR;
     }
 
     public String getCode() {
@@ -53,7 +59,7 @@ public enum SystemErrorCode implements ErrorCode {
 
     @Override
     public String getMessage() {
-        return null;
+        return this.message;
     }
 
     public String message() {

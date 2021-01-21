@@ -1,6 +1,7 @@
+##招行对公余额查询
+#set($umask    = "1000")
 #set($cmb_user  = $data.cmbUser)
-#set($acctNo  = $data.acctNo)
-<?xml version="1.0" encoding="GBK"?>
+    $!{umask}<?xml version="1.0" encoding="GBK"?>
 <CMBSDKPGK>
     <INFO>
         <FUNNAM>GetAccInfo</FUNNAM>
@@ -9,6 +10,6 @@
     </INFO>
     <SDKACINFX>
         <BBKNBR>75</BBKNBR>
-        <ACCNBR>$!{acctNo}</ACCNBR>
+        <ACCNBR>$!{data.acctNo}</ACCNBR>
     </SDKACINFX>
 </CMBSDKPGK>

@@ -1,8 +1,6 @@
 package com.kyn.myproject.demo.common.entity;
 
 
-import com.kyn.myproject.demo.common.enums.EncodeEnum;
-import com.kyn.myproject.demo.common.enums.MessageFormatEnum;
 import com.kyn.myproject.demo.common.enums.ProcessPhaseEnum;
 import com.kyn.myproject.demo.common.util.StringUtils;
 
@@ -15,6 +13,25 @@ import java.util.Map;
  * @date 2021/1/18 15:18
  */
 public class MessageDescription {
+    /**
+     * 支付渠道编码
+     */
+    private String instCode;
+
+    /**
+     * 交易码
+     */
+    private String transCode;
+
+    /**
+     * 客户端通信通道
+     */
+    private CommunicationInstitution clientInstitution;
+
+    /**
+     * 服务端通信通道
+     */
+    private CommunicationInstitution serverInstitution;
 
     /**
      * 接收到客户端的请求报文
@@ -52,9 +69,42 @@ public class MessageDescription {
     private ProcessPhaseEnum processPhase;
 
     /**
-     * 当前处理的通讯
+     * 当前处理的通讯（区分客户端、服务端）
      */
     private CommunicationEntity communicationEntity;
+
+
+    public String getInstCode() {
+        return instCode;
+    }
+
+    public void setInstCode(String instCode) {
+        this.instCode = instCode;
+    }
+
+    public String getTransCode() {
+        return transCode;
+    }
+
+    public void setTransCode(String transCode) {
+        this.transCode = transCode;
+    }
+
+    public CommunicationInstitution getClientInstitution() {
+        return clientInstitution;
+    }
+
+    public void setClientInstitution(CommunicationInstitution clientInstitution) {
+        this.clientInstitution = clientInstitution;
+    }
+
+    public CommunicationInstitution getServerInstitution() {
+        return serverInstitution;
+    }
+
+    public void setServerInstitution(CommunicationInstitution serverInstitution) {
+        this.serverInstitution = serverInstitution;
+    }
 
     public MessageEnvelope getClientRequestMessageEnvelope() {
         return clientRequestMessageEnvelope;

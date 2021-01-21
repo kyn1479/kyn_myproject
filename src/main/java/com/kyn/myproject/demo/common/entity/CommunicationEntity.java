@@ -1,8 +1,12 @@
 package com.kyn.myproject.demo.common.entity;
 
+import com.alibaba.fastjson.JSON;
+import com.kyn.myproject.demo.common.cache.GroovyScriptCache;
 import com.kyn.myproject.demo.common.enums.EncodeEnum;
 import com.kyn.myproject.demo.common.enums.MessageFormatEnum;
 import com.kyn.myproject.demo.common.util.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 import java.util.Map;
@@ -13,6 +17,8 @@ import java.util.Map;
  * @date 2021/1/19 22:51
  */
 public class CommunicationEntity extends EntityBase implements Comparable<CommunicationEntity> {
+    private static final Logger logger = LoggerFactory.getLogger(GroovyScriptCache.class);
+
     //主键
     private Long id;
     //支付渠道交易类型id
@@ -97,6 +103,42 @@ public class CommunicationEntity extends EntityBase implements Comparable<Commun
     @Override
     public int compareTo(CommunicationEntity communicationEntity) {
         return this.commuOrder.compareTo(communicationEntity.getCommuOrder());
+    }
+
+    /**
+     * 是否保存HTTP长连接
+     *
+     * @return
+     */
+    public boolean getKeepAlive() {
+        Object o = getProperty("keepAlive");
+        if (o == null) {
+            return true;
+        }
+        String s = o.toString();
+        // 如果配置的不是false，则返回true，默认为HTTP长连接机制
+        return !s.equalsIgnoreCase("false");
+    }
+
+    /**
+     * @Description 获取扩展属性值
+     * @Params
+     * @Return
+     * @Exceptions
+     */
+    public Object getProperty(String propertyName) {
+        try {
+            if (StringUtils.isNotBlank(properties)) {
+                if (propertyMap == null) {
+                    propertyMap = JSON.parseObject(properties);
+                }
+                return propertyMap.get(propertyName);
+            }
+            return null;
+        } catch (Exception e) {
+            logger.error("通讯实体解析扩展属性（获取属性：{}）异常", propertyName, e);
+            return null;
+        }
     }
 
     /**
