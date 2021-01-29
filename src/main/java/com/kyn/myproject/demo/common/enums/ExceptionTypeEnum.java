@@ -17,9 +17,9 @@ public enum ExceptionTypeEnum {
 
     COMMUNICATION("COMMUNICATION", "通讯异常"),
 
-    BIZ_CHECK("BIZ_CHECK", "业务校验异常")
+    BIZ_CHECK("BIZ_CHECK", "业务校验异常"),
 
-    ;
+   ;
 
     /**
      * 枚举值

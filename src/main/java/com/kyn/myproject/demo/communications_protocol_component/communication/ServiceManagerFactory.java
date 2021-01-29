@@ -51,7 +51,7 @@ public class ServiceManagerFactory {
     }
 
     /**
-     * 注册客户端协议
+     * 注册服务端协议
      * @param protocol
      * @param serverManager
      */

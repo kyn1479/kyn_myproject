@@ -62,7 +62,7 @@ public class MessageReceiverTest {
         communicationEntity.setCommuCode("CommuCode");//通讯编码
         communicationEntity.setCommuName("通讯名称");//通讯名称
         communicationEntity.setCsFlag("01");// 客户端/服务端交易标识(01-客户端  02-服务端)
-        communicationEntity.setMessageParserId("CoreParser");//消息解析器在spring上下文中的ID
+        communicationEntity.setMessageParserId("DefaultParser");//消息解析器在spring上下文中的ID
 
         messageDescription.setProcessPhase(ProcessPhaseEnum.CLIENT_REQUEST_RECEIVE);//接收客户端请求阶段
         messageDescription.setClientRequestMessageEnvelope(clientRequestMessageEnvelope);

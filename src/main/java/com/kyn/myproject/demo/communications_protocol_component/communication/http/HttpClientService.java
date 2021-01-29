@@ -1,4 +1,4 @@
-package com.kyn.myproject.demo.communications_protocol_component.communication;
+package com.kyn.myproject.demo.communications_protocol_component.communication.http;
 
 import com.kyn.myproject.demo.common.constant.MessageTransportConstant;
 import com.kyn.myproject.demo.common.entity.CommunicationEntity;
@@ -8,6 +8,7 @@ import com.kyn.myproject.demo.common.entity.ProjectContext;
 import com.kyn.myproject.demo.common.enums.*;
 import com.kyn.myproject.demo.common.exception.ProjectException;
 import com.kyn.myproject.demo.common.util.*;
+import com.kyn.myproject.demo.communications_protocol_component.communication.ProtocolClientService;
 import org.apache.commons.lang.BooleanUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -34,7 +35,7 @@ import java.util.UUID;
 
 /**
  * @author Kangyanan
- * @Description:
+ * @Description: http协议处理服务实现类-客户端
  * @date 2021/1/20 17:38
  */
 @Service

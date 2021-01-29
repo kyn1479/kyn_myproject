@@ -1,0 +1,34 @@
+server:
+  port: 8081
+filed:
+  validate:
+    yaml:
+      config:
+        path: classpath:/config/validate/*.yml
+
+project:
+  captcha-open: false                         #是否开启登录验证码
+  shiro:
+    remember-me-timeout: 7                    #cookie记住登录信息时间，默认7天（天）
+    global-session-timeout: 1800              #Session会话超时时间，默认30分钟（秒）
+
+
+
+### spring配置
+spring:
+  ## 数据库配置
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shiro_demo?serverTimezone=UTC&useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=utf-8
+    username: root
+    password: 123qwe
+
+  ## jpa配置
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+      hibernate.format_sql: false
+    open-in-view: true

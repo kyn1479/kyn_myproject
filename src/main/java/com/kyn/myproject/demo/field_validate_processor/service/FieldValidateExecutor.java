@@ -35,7 +35,6 @@ public class FieldValidateExecutor {
             List<FieldPolicy> fieldPolicyList = fieldPolicyListMap.get(transCode);
             if (!CollectionUtils.isEmpty(fieldPolicyList)) {
                 for (FieldPolicy fieldPolicy : fieldPolicyList) {
-                    //data.get(fieldPolicy.getField()); 多写的一句
                     fieldPolicy.validate(StringUtils.valueOf(data.get(fieldPolicy.getField())));
                 }
             }

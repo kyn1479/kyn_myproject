@@ -4,7 +4,7 @@ import com.kyn.myproject.demo.common.entity.ProjectContext;
 
 /**
  * @author Kangyanan
- * @Description:
+ * @Description: 协议处理服务抽象类-客户端
  * @date 2021/1/20 17:37
  */
 public abstract class ProtocolClientService implements ProtocolService {

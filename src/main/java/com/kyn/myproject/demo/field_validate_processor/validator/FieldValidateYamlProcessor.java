@@ -48,8 +48,10 @@ public class FieldValidateYamlProcessor extends YamlProcessor implements Initial
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        String str="classpath:/config/validate/*.yml";
+//        String str=env.getProperty(ValidatorConstant.FIELD_VALIDATE_YAML_CONFIG_PATH);
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource[] resources = resolver.getResources(env.getProperty(ValidatorConstant.FIELD_VALIDATE_YAML_CONFIG_PATH));
+        Resource[] resources = resolver.getResources(str);
         super.setResources(resources);
         Map<String, Object> yamlMap = createMap();//yaml配置
         this.styleMap = initStyleMap(yamlMap);

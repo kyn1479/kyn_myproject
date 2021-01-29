@@ -4,7 +4,7 @@ import com.kyn.myproject.KynMyprojectApplication;
 import com.kyn.myproject.demo.common.cache.TemplateCacheManager;
 import com.kyn.myproject.demo.common.entity.*;
 import com.kyn.myproject.demo.common.enums.ProcessPhaseEnum;
-import com.kyn.myproject.demo.communications_protocol_component.communication.HttpClientManager;
+import com.kyn.myproject.demo.communications_protocol_component.communication.http.HttpClientManager;
 import com.kyn.myproject.demo.message_assemble_engine.service.MessageAssembleEngine;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,14 +21,14 @@ import java.util.Map;
 
 /**
  * @author Kangyanan
- * @Description: 协议测试类 for HTTP
+ * @Description: 协议测试类 for HTTP Server
  * @date 2021/1/21 10:02
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = KynMyprojectApplication.class)
 @WebAppConfiguration
-public class ProtocolServiceTest_HTTP {
-    private static final Logger logger = LoggerFactory.getLogger(ProtocolServiceTest_HTTP.class);
+public class ProtocolServiceTest_HTTP_Client {
+    private static final Logger logger = LoggerFactory.getLogger(ProtocolServiceTest_HTTP_Client.class);
     /**
      * http客户端管理类
      */
@@ -101,7 +101,7 @@ public class ProtocolServiceTest_HTTP {
         communicationEntity.setCommuCode("cmb_acctBalanceQuery");//通讯编码
         communicationEntity.setCommuName("招商银行余额查询");//通讯名称
         communicationEntity.setCsFlag("01");// 客户端/服务端交易标识(01-客户端  02-服务端)
-        communicationEntity.setMessageParserId("CoreParser");//消息解析器在spring上下文中的ID 解析通道返回的报文
+        communicationEntity.setMessageParserId("DefaultParser");//消息解析器在spring上下文中的ID 解析通道返回的报文
         communicationEntity.setReqUrl("http://172.18.171.233:8015/VirtualBank/b2e/cmb/test");
         communicationEntity.setProtocolType("01");
         communicationEntity.setConnectTimeout(60000);

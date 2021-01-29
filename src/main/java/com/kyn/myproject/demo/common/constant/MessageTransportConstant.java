@@ -21,4 +21,6 @@ public class MessageTransportConstant {
     public static final String COMMUNICATION_LOCAL_FILE_NAME = "localFileName";
     public static final String COMMUNICATION_LOCAL_FILE_NAME_SUFFIX = "localFileNameSuffix";
 
+
+    public static final String INST_CODE = "instCode";//支付渠道编码
 }

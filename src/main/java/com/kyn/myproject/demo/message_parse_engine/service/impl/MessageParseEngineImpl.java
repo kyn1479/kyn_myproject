@@ -33,12 +33,12 @@ public class MessageParseEngineImpl implements MessageParseEngine {
         //1.获取待解析报文
         Object parseMessage = getParseMessage(messageDescription);
 
-        //2.获取报文解析器(加载groovy脚本，有可能是默认实现的java类,脚本统一实现MessageParser接口)
+        //2.获取报文解析器(从缓存中加载groovy脚本,脚本统一实现MessageParser接口)
         MessageParser messageParser = findParser(context);
 
         //3.进行报文解析
         Object obj = messageParser.parse(context, parseMessage);
-        logger.info("交易-报文解析结果：{}",obj.toString());
+        logger.info("交易-报文解析结果：{}",BeanUtils.beanToMap(obj));
         messageDescription.putDatas(BeanUtils.beanToMap(obj));
     }
 

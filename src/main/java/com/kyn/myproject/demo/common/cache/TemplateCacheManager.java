@@ -28,7 +28,7 @@ public class TemplateCacheManager implements CacheManager{
         } catch (Exception e) {
             logger.info("TemplateCacheManager-加载模板异常！");
         }
-        messageTemplateCache.keySet().forEach(key -> System.out.println("报文加载内容：/n"+"map.get(" + key + ") = " + messageTemplateCache.get(key)));
+        messageTemplateCache.keySet().forEach(key -> System.out.println("报文加载内容：\n"+"map.get(" + key + ") = " + messageTemplateCache.get(key)));
     }
 
     @Override

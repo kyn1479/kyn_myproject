@@ -1,10 +1,12 @@
-package com.kyn.myproject.demo.communications_protocol_component.communication;
+package com.kyn.myproject.demo.communications_protocol_component.communication.http;
 
 import com.kyn.myproject.demo.common.constant.MessageTransportConstant;
 import com.kyn.myproject.demo.common.entity.*;
 import com.kyn.myproject.demo.common.enums.*;
 import com.kyn.myproject.demo.common.exception.ProjectException;
 import com.kyn.myproject.demo.common.util.StringUtils;
+import com.kyn.myproject.demo.communications_protocol_component.communication.ClientManager;
+import com.kyn.myproject.demo.communications_protocol_component.communication.ServiceManagerFactory;
 import com.kyn.myproject.demo.communications_protocol_component.communication.ssl.HttpClientBuilder;
 import com.kyn.myproject.demo.common.security.CertService;
 import com.kyn.myproject.demo.common.security.KeyStoreObj;

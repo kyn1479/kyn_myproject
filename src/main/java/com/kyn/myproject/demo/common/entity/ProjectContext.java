@@ -7,6 +7,8 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpUriRequest;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -168,5 +170,25 @@ public class ProjectContext {
      */
     public HttpResponse getHttpResponse() {
         return (HttpResponse) paramMap.get(ParamType.HTTP_CLIENT_RESPONSE);
+    }
+
+    /**
+     * @Description 获取HTTP SERVLET
+     * @Params
+     * @Return HttpServletRequest
+     * @Exceptions
+     */
+    public HttpServletRequest getHttpServletRequest() {
+        return (HttpServletRequest) paramMap.get(ParamType.HTTP_SERVER_REQUEST);
+    }
+
+    /**
+     * @Description 获取HTTP RESPONSE
+     * @Params
+     * @Return HttpServletResponse
+     * @Exceptions
+     */
+    public HttpServletResponse getHttpServletResponse() {
+        return (HttpServletResponse) paramMap.get(ParamType.HTTP_SERVER_RESPONSE);
     }
 }
